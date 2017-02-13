@@ -1,10 +1,11 @@
 import React from 'react';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
+import WagonItem from './WagonItem';
 
 const WagonTablePresentation = ({wagons}) => {
     console.log(JSON.stringify(wagons));
     return (
-        <Table>
+        <Table showCheckboxes={false}>
             <TableHeader>
                 <TableRow>
                     <TableHeaderColumn>N</TableHeaderColumn>
@@ -38,31 +39,7 @@ const WagonTablePresentation = ({wagons}) => {
             </TableHeader>
             <TableBody>
                 {wagons.map((wagon) =>
-                    <TableRow>
-                        <TableRowColumn>{wagon.number}</TableRowColumn>
-                        <TableRowColumn>{wagon.wagon}</TableRowColumn>
-                        <TableRowColumn>{wagon.owner}</TableRowColumn>
-                        <TableRowColumn>{wagon.manager}</TableRowColumn>
-                        <TableRowColumn>{wagon.releaseDate}</TableRowColumn>
-                        <TableRowColumn>{wagon.releaseStation}</TableRowColumn>
-                        <TableRowColumn>{wagon.releaseRailroad}</TableRowColumn>
-                        <TableRowColumn>{wagon.cargoType}</TableRowColumn>
-                        <TableRowColumn>{wagon.weight}</TableRowColumn>
-                        <TableRowColumn>{wagon.operationDate}</TableRowColumn>
-                        <TableRowColumn>{wagon.currentStation}</TableRowColumn>
-                        <TableRowColumn>{wagon.currentRailroad}</TableRowColumn>
-                        <TableRowColumn>{wagon.operationCode}</TableRowColumn>
-                        <TableRowColumn>{wagon.arrivalDate}</TableRowColumn>
-                        <TableRowColumn>{wagon.arrivalStation}</TableRowColumn>
-                        <TableRowColumn>{wagon.arrivalRailroad}</TableRowColumn>
-                        <TableRowColumn>{wagon.cargoCode}</TableRowColumn>
-                        <TableRowColumn>{wagon.repairDate}</TableRowColumn>
-                        <TableRowColumn>{wagon.idleDays}</TableRowColumn>
-                        <TableRowColumn>{wagon.wagonType}</TableRowColumn>
-                        <TableRowColumn>{wagon.wagonModel}</TableRowColumn>
-                        <TableRowColumn>{wagon.km}</TableRowColumn>
-                        <TableRowColumn>{wagon.comment}</TableRowColumn>
-                    </TableRow>
+                <WagonItem key={wagon.number} {...wagon} />
                 )}
             </TableBody>
         </Table>)

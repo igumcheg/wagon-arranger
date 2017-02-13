@@ -32,7 +32,6 @@ module.exports = {
     }
   },
   module: {
-    noParse: [/jszip.js$/],
     loaders: [
       {
         test: /\.js$/,

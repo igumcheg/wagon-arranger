@@ -9,12 +9,11 @@
   },
   "license": "private",
   "dependencies": {
-    "ag-grid": "7.1.x",
-    "ag-grid-react": "7.1.x",
     "babel-core": "^6.10.4",
     "babel-plugin-transform-class-properties": "^6.10.2",
     "babel-polyfill": "^6.3.14",
     "es6-promise": "^4.0.5",
+    "material-ui": "0.16.6",
     "npm": "^3.10.5",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",

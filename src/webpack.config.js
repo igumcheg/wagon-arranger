@@ -13,8 +13,7 @@ module.exports = {
   },
   externals: [
     {
-      './cptable': 'var cptable',
-      './jszip': 'jszip'
+      './cptable': 'var cptable'
     }
   ],
   output: {
@@ -33,6 +32,7 @@ module.exports = {
     }
   },
   module: {
+    noParse: [/jszip.js$/],
     loaders: [
       {
         test: /\.js$/,

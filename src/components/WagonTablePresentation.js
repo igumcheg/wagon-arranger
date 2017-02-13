@@ -39,7 +39,7 @@ const WagonTablePresentation = ({wagons}) => {
             </TableHeader>
             <TableBody>
                 {wagons.map((wagon) =>
-                <WagonItem key={wagon.number} {...wagon} />
+                <WagonItem key={wagon.id} {...wagon} />
                 )}
             </TableBody>
         </Table>)

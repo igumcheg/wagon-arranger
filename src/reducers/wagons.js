@@ -1,16 +1,25 @@
 let id = 0;
-const wagons = (state = [], action)=> {
-    console.log(action.type);
-    console.log(JSON.stringify(action));
+const wagons = (state = {}, action)=> {
     switch (action.type) {
         case "RECEIVE_WAGONS":
-            return action.wagons.map((wagon) =>(
-            {...wagon, id: id++, new: false}
-            ));
+            let newState = {};
+            action.wagons.forEach((wagonItem)=> {
+                newState[wagonItem.wagon] = {
+                    old: wagonItem
+                }
+            });
+        return newState;
         case "ADD_NEW_WAGONS":
-            return state.concat(action.wagons.map((wagon) =>(
-            {...wagon, id: id++, new: true}
-            )));
+            newState = {};
+            action.wagons.forEach((wagonItem)=> {
+                let stateWagonEntry = state[wagonItem.wagon];
+                let newWagonEntry = {
+                    ...stateWagonEntry,
+                    updated: wagonItem
+                };
+                newState[wagonItem.wagon] = newWagonEntry;
+            });
+            return newState;
         default:
             return state;
     }

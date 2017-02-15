@@ -5,6 +5,7 @@ export const getChangedKey = (currentKey)=> {
     case 'N':
       return 'number';
     case 'Вагон':
+    case 'Номер вагона':
       return 'wagon';
     case 'Собственник':
       return 'owner';

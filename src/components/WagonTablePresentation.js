@@ -12,28 +12,28 @@ const WagonTablePresentation = ({wagons}) => {
                 <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
                     <TableRow>
                         <TableHeaderColumn style={{...overallStyle, ...width('2%')}}>N</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('5%')}}>Вагон</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('7%')}}>Собственник</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('4%')}}>Вагон</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('6%')}}>Собственник</TableHeaderColumn>
                         <TableHeaderColumn style={{...overallStyle, ...width('7%')}}>Распорядитель</TableHeaderColumn>
                         <TableHeaderColumn style={{...overallStyle, ...width('5%')}}>Дата отправки</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('10%')}}>Станция отправления</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('7%')}}>Станция отправления</TableHeaderColumn>
                         <TableHeaderColumn style={{...overallStyle, ...width('6%')}}>ЖД Отправления</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('5%')}}>Тип груза</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('4%')}}>Вес</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('3%')}}>Тип груза</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('2%')}}>Вес</TableHeaderColumn>
                         <TableHeaderColumn style={{...overallStyle, ...width('5%')}}>Дата операции</TableHeaderColumn>
                         <TableHeaderColumn style={{...overallStyle, ...width('7%')}}>Текущая станция</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle}}>ЖД текущая</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle}}>Код операции</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle}}>Дата прибытия</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle}}>Станция назначения</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle}}>ЖД назначения</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle}}>Код груза</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle}}>Дата планового ремонта</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle}}>Количество дней простоя</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle}}>Тип вагона</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle}}>Модель</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle}}>Км</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle}}>Комментарий</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('4%')}}>ЖД текущая</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('5%')}}>Код операции</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('5%')}}>Дата прибытия</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('7%')}}>Станция назначения</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('4%')}}>ЖД назначения</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('4%')}}>Код груза</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('5%')}}>Дата планового ремонта</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('6%')}}>Количество дней простоя</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('4%')}}>Тип вагона</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('4%')}}>Модель</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('3%')}}>Км</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('5%')}}>Комментарий</TableHeaderColumn>
                     </TableRow>
                 </TableHeader>
             </Table>

@@ -3,7 +3,7 @@ import {TableRow, TableRowColumn} from 'material-ui/Table';
 import "./WagonItem"
 
 export const overallStyle = {
-    borderRight: "1px solid black",
+    // borderBottom: "1px solid #ffbe47",
     fontSize: "11px",
     textAlign: "center",
     width: "auto",
@@ -12,8 +12,8 @@ export const overallStyle = {
     wordWrap: 'break-word',
     whiteSpace: 'normal'
 };
-let oldStyle = { backgroundColor: '#f9f768'};
-let newStyle = { backgroundColor: '#b3d84b'};
+let oldStyle = { backgroundColor: '#f9f768', borderBottom: "1px solid #edf26f"};
+let newStyle = { backgroundColor: '#b3d84b', borderBottom: "1px solid #afd662"};
 export const width = (width) => ({width});
 const WagonRow = ({
     id,
@@ -45,28 +45,28 @@ const WagonRow = ({
     let style ={...overallStyle, ...(isOld ? oldStyle : newStyle)};
     return <TableRow>
         <TableRowColumn style={{...style, ...width('2%')}}>{number}</TableRowColumn>
-        <TableRowColumn style={{...style, ...width('5%')}}>{wagon}</TableRowColumn>
-        <TableRowColumn style={{...style, ...width('7%')}}>{owner}</TableRowColumn>
+        <TableRowColumn style={{...style, ...width('4%')}}>{wagon}</TableRowColumn>
+        <TableRowColumn style={{...style, ...width('6%')}}>{owner}</TableRowColumn>
         <TableRowColumn style={{...style, ...width('7%')}}>{manager}</TableRowColumn>
         <TableRowColumn style={{...style, ...width('5%')}}>{releaseDate}</TableRowColumn>
-        <TableRowColumn style={{...style, ...width('10%')}}>{releaseStation}</TableRowColumn>
+        <TableRowColumn style={{...style, ...width('7%')}}>{releaseStation}</TableRowColumn>
         <TableRowColumn style={{...style, ...width('6%')}}>{releaseRailroad}</TableRowColumn>
-        <TableRowColumn style={{...style, ...width('5%')}}>{cargoType}</TableRowColumn>
-        <TableRowColumn style={{...style, ...width('4%')}}>{weight}</TableRowColumn>
+        <TableRowColumn style={{...style, ...width('3%')}}>{cargoType}</TableRowColumn>
+        <TableRowColumn style={{...style, ...width('2%')}}>{weight}</TableRowColumn>
         <TableRowColumn style={{...style, ...width('5%')}}>{operationDate}</TableRowColumn>
         <TableRowColumn style={{...style, ...width('7%')}}>{currentStation}</TableRowColumn>
-        <TableRowColumn style={style}>{currentRailroad}</TableRowColumn>
-        <TableRowColumn style={style}>{operationCode}</TableRowColumn>
-        <TableRowColumn style={style}>{arrivalDate}</TableRowColumn>
-        <TableRowColumn style={style}>{arrivalStation}</TableRowColumn>
-        <TableRowColumn style={style}>{arrivalRailroad}</TableRowColumn>
-        <TableRowColumn style={style}>{cargoCode}</TableRowColumn>
-        <TableRowColumn style={style}>{repairDate}</TableRowColumn>
-        <TableRowColumn style={style}>{idleDays}</TableRowColumn>
-        <TableRowColumn style={style}>{wagonType}</TableRowColumn>
-        <TableRowColumn style={style}>{wagonModel}</TableRowColumn>
-        <TableRowColumn style={style}>{km}</TableRowColumn>
-        <TableRowColumn style={style}>{comment}</TableRowColumn>
+        <TableRowColumn style={{...style, ...width('4%')}}>{currentRailroad}</TableRowColumn>
+        <TableRowColumn style={{...style, ...width('5%')}}>{operationCode}</TableRowColumn>
+        <TableRowColumn style={{...style, ...width('5%')}}>{arrivalDate}</TableRowColumn>
+        <TableRowColumn style={{...style, ...width('7%')}}>{arrivalStation}</TableRowColumn>
+        <TableRowColumn style={{...style, ...width('4%')}}>{arrivalRailroad}</TableRowColumn>
+        <TableRowColumn style={{...style, ...width('4%')}}>{cargoCode}</TableRowColumn>
+        <TableRowColumn style={{...style, ...width('5%')}}>{repairDate}</TableRowColumn>
+        <TableRowColumn style={{...style, ...width('6%')}}>{idleDays}</TableRowColumn>
+        <TableRowColumn style={{...style, ...width('4%')}}>{wagonType}</TableRowColumn>
+        <TableRowColumn style={{...style, ...width('4%')}}>{wagonModel}</TableRowColumn>
+        <TableRowColumn style={{...style, ...width('3%')}}>{km}</TableRowColumn>
+        <TableRowColumn style={{...style, ...width('5%')}}>{comment}</TableRowColumn>
     </TableRow>
 };
 

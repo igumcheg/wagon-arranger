@@ -10,7 +10,7 @@ const wagons = (state = {}, action)=> {
             });
         return newState;
         case "ADD_NEW_WAGONS":
-            newState = {};
+            newState = {...state};
             action.wagons.forEach((wagonItem)=> {
                 let stateWagonEntry = state[wagonItem.wagon];
                 let newWagonEntry = {

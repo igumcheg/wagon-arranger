@@ -1,15 +1,13 @@
 import React from 'react';
 import {TableRowColumn} from 'material-ui/Table';
 
-let onClick = () => {
-  console.log("clicked");
-}
 const TableCell = ({
   style,
-  value,
-  onClick
+  value
 }) =>(
-  <TableRowColumn style={style}>{value}</TableRowColumn>
+  <TableRowColumn style={style}>
+    <CellInput value={value}/>
+  </TableRowColumn>
 );
 
 export default TableCell;

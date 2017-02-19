@@ -1,7 +1,6 @@
 import React from 'react';
 import {TableRow} from 'material-ui/Table';
 import TableCell from './TableCell'
-import "./WagonItem"
 
 export const overallStyle = {
     borderRight: "1px solid black",

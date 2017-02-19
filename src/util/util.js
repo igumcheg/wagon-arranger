@@ -116,8 +116,10 @@ export const changeKey = (obj, oldKey, newKey) => {
 
 export const loadDislocationFromFile = (file, dispatch, createAction) => {
   var reader = new FileReader();
+  reader.fileName = file.name;
   reader.onload = function (e) {
     var data = e.target.result;
+    var filename =e.target.fileName;
     let workbook = XLSX.read(data, {type: 'binary'});
     workbook.SheetNames.forEach(function (sheetName) {
       // Here is your object
@@ -128,7 +130,7 @@ export const loadDislocationFromFile = (file, dispatch, createAction) => {
           changeKey(wagon, key, newKey)
         }
       });
-      dispatch(createAction(wagonArr))
+      dispatch(createAction(filename, wagonArr))
     });
 
   };

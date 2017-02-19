@@ -4,7 +4,7 @@ import TableCell from './TableCell'
 import "./WagonItem"
 
 export const overallStyle = {
-    // borderBottom: "1px solid #ffbe47",
+    borderRight: "1px solid black",
     fontSize: "11px",
     textAlign: "center",
     width: "auto",

@@ -18,6 +18,6 @@ const mapStateToProps = (state) => ({
   className: "inputClass"
 });
 
-const CurrentDislocationForm = connect(mapStateToProps, mapDispatchToProps)(FileInputForm);
+const MainDislocationForm = connect(mapStateToProps, mapDispatchToProps)(FileInputForm);
 
-export default CurrentDislocationForm;
+export default MainDislocationForm;

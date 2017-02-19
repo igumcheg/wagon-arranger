@@ -1,9 +1,11 @@
-export const wagonsReceived = (wagons) => ({
+export const wagonsReceived = (filename, wagons) => ({
   type: "RECEIVE_WAGONS",
-  wagons
+  wagons,
+  filename
 });
 
-export const newWagonsAdded = (wagons) => ({
+export const newWagonsAdded = (filename, wagons) => ({
   type: "ADD_NEW_WAGONS",
-  wagons
+  wagons,
+  filename
 });

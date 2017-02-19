@@ -1,8 +1,11 @@
 import {combineReducers} from 'redux'
 import wagons from "./wagons";
+import status from "./status";
+
 
 const rootReducer = combineReducers({
-  wagons
+  wagons,
+  status
 });
 
 export default rootReducer;

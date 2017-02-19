@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import CurrentDislocationForm from './components/CurrentDislocationForm';
-import ModifiedDislocationForm from './components/ModifiedDislocationForm';
+import Header from './components/Header';
 import WagonTable from './components/WagonTable';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import injectTapEventPlugin from 'react-tap-event-plugin';
@@ -12,9 +11,7 @@ class App extends Component {
         return (
             <MuiThemeProvider>
                 <div>
-                    <CurrentDislocationForm />
-                    <br></br>
-                    <ModifiedDislocationForm/>
+                   <Header/>
                     <WagonTable />
                 </div>
             </MuiThemeProvider>

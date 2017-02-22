@@ -3,6 +3,7 @@ import {TableRow} from 'material-ui/Table';
 import TableCell from './TableCell'
 
 export const overallStyle = {
+    border: 'none',
     borderRight: "1px solid black",
     fontSize: "11px",
     textAlign: "center",
@@ -12,7 +13,7 @@ export const overallStyle = {
     wordWrap: 'break-word',
     whiteSpace: 'normal'
 };
-let oldStyle = { backgroundColor: '#f9f768', borderBottom: "1px solid #edf26f"};
+let oldStyle = { backgroundColor: '#f9f768', borderBottom: "1px solid #fcf479"};
 let newStyle = { backgroundColor: '#b3d84b', borderBottom: "1px solid #afd662"};
 export const width = (width) => ({width});
 const WagonRow = ({

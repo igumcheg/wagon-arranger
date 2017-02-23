@@ -7,6 +7,7 @@ const mapStateToProps = (state) => {
     }
 };
 
+
 const WagonTable = connect(mapStateToProps)(WagonTablePresentation);
 
 export default WagonTable;

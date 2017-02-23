@@ -20,6 +20,10 @@ const wagons = (state = {}, action)=> {
                 newState[wagonItem.wagon] = newWagonEntry;
             });
             return newState;
+        case "CHANGE_WAGON_FIELD":
+            newState = {...state};
+            newState[action.wagonNumber][action.isOld ? 'old' : 'new'][action.fieldName]=action.newValue;
+            return newState;
         default:
             return state;
     }

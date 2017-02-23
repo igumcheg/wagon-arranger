@@ -4,7 +4,7 @@ import WagonRow from './WagonRow';
 import {width} from "./WagonRow";
 import {overallStyle} from "./WagonRow";
 
-const WagonTablePresentation = ({wagons}) => {
+const WagonTablePresentation = ({wagons, onCellChange}) => {
     console.log(JSON.stringify(wagons));
     return (
         <div style={{width: "auto"}}>
@@ -40,8 +40,8 @@ const WagonTablePresentation = ({wagons}) => {
             {Object.keys(wagons).sort().map((number) =>
                 <Table key={number} showCheckboxes={false}>
                     <TableBody >
-                        <WagonRow isOld={true} {...wagons[number].old} />
-                        {wagons[number].updated ? <WagonRow isOld={false} {...wagons[number].updated} /> : null}
+                        <WagonRow onCellChange={onCellChange} isOld={true} {...wagons[number].old} />
+                        {wagons[number].updated ? <WagonRow isOld={false} onCellChange={onCellChange} {...wagons[number].updated} /> : null}
                     </TableBody>
                 </Table>
             )

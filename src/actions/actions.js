@@ -9,3 +9,11 @@ export const newWagonsAdded = (filename, wagons) => ({
   wagons,
   filename
 });
+
+export const wagonFieldChanged = (wagonNumber, isOld, fieldName, newValue) => ({
+  type: "CHANGE_WAGON_FIELD",
+  wagonNumber,
+  isOld,
+  fieldName,
+  newValue
+});

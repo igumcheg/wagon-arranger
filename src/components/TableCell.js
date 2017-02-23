@@ -4,10 +4,17 @@ import CellInput from './CellInput'
 
 const TableCell = ({
   style,
-  value
+  value,
+    wagonNumber,
+    isOld,
+    fieldName
 }) =>(
   <TableRowColumn style={style}>
-    <CellInput style = {style} value={value}/>
+    <CellInput style = {style}
+               value={value}
+    wagonNumber={wagonNumber}
+    isOld={isOld}
+    fieldName={fieldName}/>
   </TableRowColumn>
 );
 

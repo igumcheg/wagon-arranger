@@ -3,7 +3,8 @@ import {connect} from "react-redux";
 
 const mapStateToProps = (state) => {
     return {
-        wagons: state.wagons
+        wagons: state.wagons,
+        addLoaded: state.status.addLoaded
     }
 };
 

@@ -2,6 +2,10 @@ import React from 'react';
 import {TableRow} from 'material-ui/Table';
 import TableCell from './TableCell'
 
+const style = {
+    margin: 12,
+};
+
 export const overallStyle = {
     border: 'none',
     borderRight: "1px solid black",
@@ -92,5 +96,4 @@ const WagonRow = ({
                    value={comment}/>
     </TableRow>
 };
-
 export default WagonRow;

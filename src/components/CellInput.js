@@ -21,7 +21,6 @@ class CellInput extends React.Component {
     }
 
 
-
     render() {
         return <input style={{
     ...this.props.style,
@@ -31,7 +30,7 @@ class CellInput extends React.Component {
                       type="text"
                       name="name"
                       defaultValue={this.props.value}
-                      />
+        />
     }
 }
 export default connect()(CellInput);

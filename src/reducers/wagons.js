@@ -8,7 +8,7 @@ const wagons = (state = {}, action)=> {
                     old: wagonItem
                 }
             });
-        return newState;
+            return newState;
         case "ADD_NEW_WAGONS":
             newState = {...state};
             action.wagons.forEach((wagonItem)=> {
@@ -22,10 +22,34 @@ const wagons = (state = {}, action)=> {
             return newState;
         case "CHANGE_WAGON_FIELD":
             newState = {...state};
-            newState[action.wagonNumber][action.isOld ? 'old' : 'new'][action.fieldName]=action.newValue;
+            newState[action.wagonNumber][action.isOld ? 'old' : 'new'][action.fieldName] = action.newValue;
+            return newState;
+        case "MERGE_WAGONS":
+            newState = {};
+            for (let wagonNumber in state) {
+                let oldWagon = state[wagonNumber].old;
+                let newWagon = state[wagonNumber].updated;
+
+                // if (newWagon) {
+                //     for (let key in oldWagon) {
+                //         let newValue = newWagon[key];
+                //         console.log("ov" + oldWagon[key]);
+                //         console.log("nv" + newValue);
+                //         if (newValue && newValue != '' && newValue != oldWagon[key]) {
+                //             console.log("замен");
+                //             oldWagon[key] = newValue;
+                //         }
+                //     }
+                // }
+                newState[wagonNumber] = {};
+                newState[wagonNumber].old = {...oldWagon, ...newWagon};
+                console.log(JSON.stringify(newState));
+                console.log("---------");
+            }
             return newState;
         default:
             return state;
+
     }
 };
 

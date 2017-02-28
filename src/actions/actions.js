@@ -17,3 +17,7 @@ export const wagonFieldChanged = (wagonNumber, isOld, fieldName, newValue) => ({
   fieldName,
   newValue
 });
+
+export const mergeWagons = () => ({
+  type: "MERGE_WAGONS"
+});

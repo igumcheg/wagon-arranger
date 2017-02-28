@@ -3,8 +3,9 @@ import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow} from 'materi
 import WagonRow from './WagonRow';
 import {width} from "./WagonRow";
 import {overallStyle} from "./WagonRow";
+import MergeButton from "./MergeButton"
 
-const WagonTablePresentation = ({wagons, onCellChange}) => {
+const WagonTablePresentation = ({wagons, addLoaded, onCellChange}) => {
     console.log(JSON.stringify(wagons));
     return (
         <div style={{width: "auto"}}>
@@ -41,11 +42,15 @@ const WagonTablePresentation = ({wagons, onCellChange}) => {
                 <Table key={number} showCheckboxes={false}>
                     <TableBody >
                         <WagonRow onCellChange={onCellChange} isOld={true} {...wagons[number].old} />
-                        {wagons[number].updated ? <WagonRow isOld={false} onCellChange={onCellChange} {...wagons[number].updated} /> : null}
+                        {wagons[number].updated ?
+                            <WagonRow isOld={false} onCellChange={onCellChange} {...wagons[number].updated} />
+                            : null}
                     </TableBody>
                 </Table>
             )
             }
+
+            {addLoaded ? <MergeButton /> : null}
         </div>)
 };
 

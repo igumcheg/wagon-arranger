@@ -22,8 +22,10 @@ class CellInput extends React.Component {
 
 
     render() {
-        return <input style={{
-    ...this.props.style,
+
+        return <input
+            key={this.props.wagonNumber + this.props.fieldName +this.props.value }
+            style={{ ...this.props.style,
     width: '100%',
     height: '100%',
     }}
@@ -33,4 +35,6 @@ class CellInput extends React.Component {
         />
     }
 }
+
+
 export default connect()(CellInput);

@@ -30,17 +30,7 @@ const wagons = (state = {}, action)=> {
                 let oldWagon = state[wagonNumber].old;
                 let newWagon = state[wagonNumber].updated;
 
-                // if (newWagon) {
-                //     for (let key in oldWagon) {
-                //         let newValue = newWagon[key];
-                //         console.log("ov" + oldWagon[key]);
-                //         console.log("nv" + newValue);
-                //         if (newValue && newValue != '' && newValue != oldWagon[key]) {
-                //             console.log("замен");
-                //             oldWagon[key] = newValue;
-                //         }
-                //     }
-                // }
+
                 newState[wagonNumber] = {};
                 newState[wagonNumber].old = {...oldWagon, ...newWagon};
                 console.log(JSON.stringify(newState));

@@ -1,5 +1,6 @@
 import React from 'react';
 import {TableRowColumn} from 'material-ui/Table';
+import CellInput from './CellInput'
 
 const TableCell = ({
   style,
@@ -9,7 +10,11 @@ const TableCell = ({
     fieldName
 }) =>(
   <TableRowColumn style={style}>
-      {value}
+    <CellInput style = {style}
+               value={value}
+    wagonNumber={wagonNumber}
+    isOld={isOld}
+    fieldName={fieldName}/>
   </TableRowColumn>
 );
 

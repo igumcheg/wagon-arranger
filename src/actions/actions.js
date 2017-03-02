@@ -21,3 +21,9 @@ export const wagonFieldChanged = (wagonNumber, isOld, fieldName, newValue) => ({
 export const mergeWagons = () => ({
   type: "MERGE_WAGONS"
 });
+
+export const saveWagonsToFile = (filename, wagons) => ({
+  type: "SAVE_WAGONS",
+  wagons,
+  filename
+});

@@ -4,7 +4,9 @@ import {connect} from "react-redux";
 const mapStateToProps = (state) => {
     return {
         wagons: state.wagons,
-        addLoaded: state.status.addLoaded
+        addLoaded: state.status.addLoaded,
+        mainLoaded: state.status.mainLoaded
+
     }
 };
 

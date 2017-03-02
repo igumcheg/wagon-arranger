@@ -4,8 +4,9 @@ import WagonRow from './WagonRow';
 import {width} from "./WagonRow";
 import {overallStyle} from "./WagonRow";
 import MergeButton from "./MergeButton"
+import SaveButton from "./SaveButton"
 
-const WagonTablePresentation = ({wagons, addLoaded, onCellChange}) => {
+const WagonTablePresentation = ({wagons, mainLoaded,  addLoaded, onCellChange}) => {
     console.log(JSON.stringify(wagons));
     return (
         <div style={{width: "auto"}}>
@@ -50,7 +51,9 @@ const WagonTablePresentation = ({wagons, addLoaded, onCellChange}) => {
             )
             }
 
-            {addLoaded ? <MergeButton /> : null}
+
+                <div><MergeButton disabled={!addLoaded} />
+                    <SaveButton disabled ={!mainLoaded} /></div>
         </div>)
 };
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import AddDislocationForm from "./AddDislocationForm";
-import MainDislocationForm from "./MainDislocationForm";
 
 let onClick = () => {
     console.log("clicked");
@@ -18,7 +17,7 @@ const HeaderPresentation = ({
                 Загружен основной файл: {mainFilename}
                 <AddDislocationForm />
             </div>
-            : <MainDislocationForm/>}
+            : null}
         {addLoaded ?
             <div>
                 Загружен дополнительный файл: {addFilename}

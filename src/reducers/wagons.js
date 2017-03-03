@@ -33,10 +33,9 @@ const wagons = (state = {}, action)=> {
 
                 newState[wagonNumber] = {};
                 newState[wagonNumber].old = {...oldWagon, ...newWagon};
-                console.log(JSON.stringify(newState));
-                console.log("---------");
             }
             return newState;
+
         default:
             return state;
 

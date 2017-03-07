@@ -24,8 +24,7 @@
     "redux": "^3.1.2",
     "redux-thunk": "^2.1.0",
     "script-loader": "^0.7.0",
-    "style-loader": "^0.13.1",
-    "xlsx": "^0.8.2"
+    "style-loader": "^0.13.1"
   },
   "devDependencies": {
     "babel-eslint": "^6.1.2",

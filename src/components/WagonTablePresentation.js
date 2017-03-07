@@ -5,11 +5,9 @@ import {width} from "./WagonRow";
 import {overallStyle} from "./WagonRow";
 import MergeButton from "./MergeButton"
 import SaveButton from "./SaveButton"
-import json2xls from 'json2xls';
 
 const WagonTablePresentation = ({wagons, mainLoaded,  addLoaded, onCellChange}) => {
     console.log(JSON.stringify(wagons));
-    var xls = json2xls(wagons);
 
     return (
         <div style={{width: "auto"}}>

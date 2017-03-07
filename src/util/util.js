@@ -1,5 +1,6 @@
-
 import * as XLSX from "xlsx";
+import fs from "fs";
+
 export const getChangedKey = (currentKey)=> {
   switch (currentKey) {
     case 'N':
@@ -115,24 +116,41 @@ export const changeKey = (obj, oldKey, newKey) => {
 };
 
 export const loadDislocationFromFile = (file, dispatch, createAction) => {
-  var reader = new FileReader();
-  reader.fileName = file.name;
-  reader.onload = function (e) {
-    var data = e.target.result;
-    var filename =e.target.fileName;
-    let workbook = XLSX.read(data, {type: 'binary'});
-    workbook.SheetNames.forEach(function (sheetName) {
-      // Here is your object
-      var wagonArr = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
-      wagonArr.map(function (wagon) {
-        for (var key in wagon) {
-          let newKey = getChangedKey(key);
-          changeKey(wagon, key, newKey)
-        }
-      });
-      dispatch(createAction(filename, wagonArr))
+    // var reader = new FileReader();
+    // reader.fileName = file.name;
+    // reader.onload = function (e) {
+    let formData = new FormData();
+    formData.append("file",file);
+    fetch('http://localhost:4567/parse', {
+      method: 'POST',
+      // headers: {
+      //   'Content-type': "multipart/form-data"
+      // },
+      body: formData
+    }).then(response => {
+      console.log(response.json())
     });
+    // };
+    // var data = e.target.result;
+    // var filename = e.target.fileName;
+    // let workbook = XLSX.read(data, {type: 'binary'});
+    // workbook.SheetNames.forEach(function (sheetName) {
+    //   // Here is your object
+    //   var wagonArr = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+    //   wagonArr.map(function (wagon) {
+    //     for (var key in wagon) {
+    //       let newKey = getChangedKey(key);
+    //       changeKey(wagon, key, newKey)
+    //     }
+    //   });
+    //   dispatch(createAction(filename, wagonArr));
+    //   saveJsonToXlsx(wagonArr, "output.xls");
+    // });
+    // reader.readAsBinaryString(file);
+  }
+  ;
 
-  };
-  reader.readAsBinaryString(file);
+export const saveJsonToXlsx = (jsonArr, filename) => {
+  let xls = json2xls(jsonArr, {});
+  fs.writeFileSync(filename, xls, 'binary');
 };

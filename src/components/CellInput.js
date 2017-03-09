@@ -23,11 +23,13 @@ class CellInput extends React.Component {
 
     render() {
 
-        return <input
+        return <textArea
             key={this.props.wagonNumber + this.props.fieldName +this.props.value }
             style={{ ...this.props.style,
     width: '100%',
-    height: '100%',
+    height: 'auto',
+    resize: 'none',
+    backgroundColor: 'transparent'
     }}
                       type="text"
                       name="name"

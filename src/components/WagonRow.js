@@ -1,24 +1,29 @@
 import React from 'react';
-import {TableRow} from 'material-ui/Table';
 import TableCell from './TableCell'
+import {Table, TableBody, TableFooter, TableHeader, TableHeaderColumn, TableRow, TableRowColumn}
+    from 'material-ui/Table';
+import TextField from 'material-ui/TextField';
+import Toggle from 'material-ui/Toggle';
 
 const style = {
-    margin: 12,
+    margin: 12
 };
 
 export const overallStyle = {
     border: 'none',
-    borderRight: "1px solid black",
     fontSize: "11px",
     textAlign: "center",
     width: "auto",
     padding: "0",
     margin: "0",
-    wordWrap: 'break-word',
-    whiteSpace: 'normal'
+    height: "48px",
+    overflow: "hidden",
+    whiteSpace: "normal",
+    textOverflow: "ellipsis",
+    wordWrap: "break-word"
 };
-let oldStyle = {backgroundColor: '#f9f768', borderBottom: "1px solid #fcf479"};
-let newStyle = {backgroundColor: '#b3d84b', borderBottom: "1px solid #afd662"};
+let oldStyle = {backgroundColor: '#eff0f2'};
+let newStyle = {backgroundColor: 'rgba(127, 221, 233, 0.8)'};
 export const width = (width) => ({width});
 const WagonRow = ({
     id,
@@ -51,7 +56,7 @@ const WagonRow = ({
     return <TableRow>
         <TableCell wagonNumber={wagon} isOld={isOld} style={{...style, ...width('2%')}} fieldName={'number'}
                    value={number}/>
-        <TableCell wagonNumber={wagon} isOld={isOld} style={{...style, ...width('4%')}} fieldName={'wagon'}
+        <TableCell wagonNumber={wagon} isOld={isOld} style={{...style, ...width('5%')}} fieldName={'wagon'}
                    value={wagon}/>
         <TableCell wagonNumber={wagon} isOld={isOld} style={{...style, ...width('6%')}} fieldName={'owner'}
                    value={owner}/>

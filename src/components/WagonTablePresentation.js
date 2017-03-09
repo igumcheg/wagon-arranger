@@ -15,7 +15,7 @@ const WagonTablePresentation = ({wagons, mainLoaded,  addLoaded, onCellChange}) 
                 <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
                     <TableRow>
                         <TableHeaderColumn style={{...overallStyle, ...width('2%')}}>N</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('4%')}}>Вагон</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('5%')}}>Вагон</TableHeaderColumn>
                         <TableHeaderColumn style={{...overallStyle, ...width('6%')}}>Собственник</TableHeaderColumn>
                         <TableHeaderColumn style={{...overallStyle, ...width('7%')}}>Распорядитель</TableHeaderColumn>
                         <TableHeaderColumn style={{...overallStyle, ...width('5%')}}>Дата отправки</TableHeaderColumn>

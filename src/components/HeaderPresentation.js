@@ -10,7 +10,8 @@ import {connect} from 'react-redux';
 class HeaderPresentation extends Component {
     render() {
         return (
-            <AppBar title="Раума Карго" iconElementLeft={
+            <AppBar title="Раума Карго"
+                    iconElementLeft={
                <div> <input id="myInput" type="file" ref={(ref) => this.myInput = ref} style={{ display: 'none' }}
                onChange= {this.props.onChange}/>
                  <IconButton>
@@ -19,6 +20,24 @@ class HeaderPresentation extends Component {
 
                  </IconButton>
                  </div>}
+                    iconElementRight={ this.props.addLoaded ?
+                <div><h1 style={{whiteSpace: 'nowrap',
+                                     overflow: 'hidden',
+                                     textOverflow: 'ellipsis',
+                                     margin: '0px',
+                                     paddingTop: '0px',
+                                     letterSpacing: '0px',
+                                     fontSize: '18px',
+                                     fontWeight: '400',
+                                     color: 'rgb(255, 255, 255)',
+                                     height: '64px',
+                                     lineHeight: '64px',
+                                     flex: '1 1 0%'
+                                    }}>
+                    Загружен файл: {this.props.addFilename}
+                </h1>
+                </div>
+             : null}
             />
         );
     }
@@ -32,5 +51,10 @@ const mapDispatchToProps = (dispatch) => ({
     }
 });
 
-export default HeaderPresentation = connect(null, mapDispatchToProps)(HeaderPresentation);
+const mapStateToProps = (state) => ({
+    addLoaded: state.status.addLoaded,
+    addFilename: state.status.addFilename
+});
+
+export default HeaderPresentation = connect(mapStateToProps, mapDispatchToProps)(HeaderPresentation);
 

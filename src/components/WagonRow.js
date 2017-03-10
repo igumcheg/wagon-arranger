@@ -1,9 +1,7 @@
 import React from 'react';
 import TableCell from './TableCell'
-import {Table, TableBody, TableFooter, TableHeader, TableHeaderColumn, TableRow, TableRowColumn}
+import {TableRow}
     from 'material-ui/Table';
-import TextField from 'material-ui/TextField';
-import Toggle from 'material-ui/Toggle';
 
 const style = {
     margin: 12

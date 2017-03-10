@@ -3,8 +3,8 @@ import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow} from 'materi
 import WagonRow from './WagonRow';
 import {width} from "./WagonRow";
 import {overallStyle} from "./WagonRow";
-import MergeButton from "./MergeButton"
-import SaveButton from "./SaveButton"
+import MergeButton from "../containers/MergeButton"
+import SaveButton from "../containers/SaveButton"
 
 const WagonTablePresentation = ({wagons, mainLoaded,  addLoaded, onCellChange}) => {
     console.log(JSON.stringify(wagons));

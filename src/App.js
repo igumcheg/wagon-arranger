@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import Header from './components/Header';
-import WagonTable from './components/WagonTable';
+import Header from './containers/Header';
+import WagonTable from './containers/WagonTable';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {fetchWagons} from "./actions/actions";
 

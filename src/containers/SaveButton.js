@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import ButtonPresentation from "./ButtonPresentation";
+import ButtonPresentation from "../components/ButtonPresentation";
 
 const mapStateToProps = (state, ownProps) => ({
     float: 'right',

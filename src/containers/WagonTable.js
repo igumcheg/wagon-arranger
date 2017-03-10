@@ -1,4 +1,4 @@
-import WagonTablePresentation from "./WagonTablePresentation";
+import WagonTablePresentation from "../components/WagonTablePresentation";
 import {connect} from "react-redux";
 
 const mapStateToProps = (state) => {

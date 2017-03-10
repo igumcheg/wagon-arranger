@@ -1,6 +1,6 @@
 import React from 'react';
 import {TableRowColumn} from 'material-ui/Table';
-import CellInput from './CellInput'
+import CellInput from '../containers/CellInput'
 
 const TableCell = ({
   style,

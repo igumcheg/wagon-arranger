@@ -1,4 +1,4 @@
-import HeaderPresentation from "./HeaderPresentation";
+import HeaderPresentation from "../components/HeaderPresentation";
 import {connect} from "react-redux";
 
 const mapStateToProps = (state) => ({

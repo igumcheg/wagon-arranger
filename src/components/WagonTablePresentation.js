@@ -40,12 +40,12 @@ const WagonTablePresentation = ({wagons, mainLoaded,  addLoaded, onCellChange}) 
                     </TableRow>
                 </TableHeader>
             </Table>
-            {Object.keys(wagons).sort().map((number) =>
-                <Table key={number} showCheckboxes={false}>
+            {Object.values(wagons).sort((a, b)=>(parseInt(a.old.number) - parseInt(b.old.number))).map((wagon) =>
+                <Table key={wagon.old.wagon} showCheckboxes={false}>
                     <TableBody >
-                        <WagonRow onCellChange={onCellChange} isOld={true} {...wagons[number].old} />
-                        {wagons[number].updated ?
-                            <WagonRow isOld={false} onCellChange={onCellChange} {...wagons[number].updated} />
+                        <WagonRow onCellChange={onCellChange} isOld={true} {...wagon.old} />
+                        {wagon.updated ?
+                            <WagonRow isOld={false} onCellChange={onCellChange} {...wagon.updated} />
                             : null}
                     </TableBody>
                 </Table>

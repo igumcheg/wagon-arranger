@@ -1,15 +1,17 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import ButtonPresentation from "../components/ButtonPresentation";
+import {saveFile} from "../util/util";
 
 const mapStateToProps = (state, ownProps) => ({
     float: 'right',
     label: 'Сохранить файл',
-    disabled: ownProps.disabled
+    disabled: ownProps.disabled,
+    wagons: state.wagons
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    onClick: () => console.log('ololo')
+    onClick: (wagons) => saveFile(wagons)
 });
 
 const SaveButton = connect(mapStateToProps, mapDispatchToProps)(ButtonPresentation);

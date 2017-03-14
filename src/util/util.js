@@ -10,3 +10,12 @@ export const loadDislocationFromFile = (file, dispatch, createAction) => {
             }
         );
 };
+
+export const saveFile = (wagons) => {
+    let formData = new FormData();
+    formData.append("json", JSON.stringify(wagons));
+    fetch('http://localhost:4567', {
+        method: 'POST',
+        body: formData
+    });
+};

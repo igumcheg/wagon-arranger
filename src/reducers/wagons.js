@@ -19,6 +19,7 @@ const wagons = (state = {}, action)=> {
                 };
                 newState[wagonItem.wagon] = newWagonEntry;
             });
+            console.log("ns" + JSON.stringify(newState));
             return newState;
         case "CHANGE_WAGON_FIELD":
             newState = {...state};

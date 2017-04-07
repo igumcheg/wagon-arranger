@@ -23,7 +23,7 @@ class CellInput extends React.Component {
   render() {
 
     return <textArea
-      key={this.props.wagonNumber + this.props.fieldName + this.props.value }
+      key={this.props.wagonNumber + this.props.fieldName}
       onChange={this.handleChange}
       style={{
         ...this.props.style,

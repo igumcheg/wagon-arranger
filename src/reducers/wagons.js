@@ -1,46 +1,35 @@
 const wagons = (state = [], action)=> {
-  switch (action.type) {
-    case "RECEIVE_WAGONS":
-      let newState = [];
-      action.wagons.forEach((wagonItem)=> {
-        newState.push({
-          old: wagonItem
-        })
-      });
-      return newState;
-    case "ADD_NEW_WAGONS":
-      newState = state.slice();
-      action.wagons.forEach((wagonItem)=> {
-        state.forEach((oldWagonItem, index)=> {
-          if (oldWagonItem.old.wagon == wagonItem.wagon) {
-            let newWagonEntry = {
-              ...oldWagonItem,
-              updated: wagonItem
-            };
-            newState[index] = newWagonEntry;
-          }
-        })
-      });
-      return newState;
-    case "CHANGE_WAGON_FIELD":
-      newState = state.slice();
-      newState.forEach((wagon, index)=> {
-        if (wagon.wagon == action.wagonNumber) {
-          newState[index][action.isOld ? 'old' : 'new'][action.fieldName] = action.newValue;
-        }
-      });
-      return newState;
-    case "MERGE_WAGONS":
-      newState = state.slice();
-      state.forEach((wagon, index) => {
-        newState[index] = {old: {...wagon.old, ...wagon.updated}}
-      });
-      return newState;
+    console.log(action.type);
+    switch (action.type) {
+        case "ADD_NEW_WAGONS":
+            return action.wagons;
+        case "CHANGE_WAGON_FIELD":
+            let newState = state.slice();
+            newState.forEach((wagon, index)=> {
+                if (wagon.wagon == action.wagonNumber) {
+                    newState[index][action.fieldName] = action.newValue;
+                }
+            });
+            console.log(JSON.stringify(newState));
+            return newState;
+        case "SELECT_WAGONS":
+            return state.map((wagon) => (
+            {
+                ...wagon,
+                selected: action.wagonNumbers.indexOf(wagon.wagon) != -1
+            }
+            ));
+        case "SENT_SELECTED_WAGONS":
+            return state.map((wagon) => (
+            {
+                ...wagon,
+                selected: false
+            }
+            ));
+        default:
+            return state;
 
-    default:
-      return state;
-
-  }
+    }
 };
 
 export default wagons;

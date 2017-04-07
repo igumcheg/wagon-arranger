@@ -24,7 +24,6 @@ let oldStyle = {backgroundColor: '#eff0f2'};
 let newStyle = {backgroundColor: 'rgba(127, 221, 233, 0.8)'};
 export const width = (width) => ({width});
 const WagonRow = ({
-    id,
     number,
     wagon,
     owner,

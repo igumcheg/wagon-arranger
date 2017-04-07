@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 
 const mapStateToProps = (state) => ({
     mainLoaded: state.status.mainLoaded,
-    addLoaded: state.status.addLoaded,
+    loaded: state.status.loaded,
     mainFilename: state.status.mainFilename,
     addFilename: state.status.addFilename
 });

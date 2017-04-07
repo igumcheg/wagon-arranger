@@ -18,22 +18,29 @@ export const wagonFieldChanged = (wagonNumber, isOld, fieldName, newValue) => ({
     newValue
 });
 
-export const mergeWagons = () => ({
-    type: "MERGE_WAGONS"
-});
-
-export const wagonsToFileSaved = (filename) => ({
-    type: "SAVE_WAGONS",
+export const openFileNameInput = (filename) => ({
+    type: "OPEN_FILENAME_INPUT",
     filename
 });
 
-export function fetchWagons(dispatch) {
-    return function (dispatch) {
-        return fetch('http://localhost:4567')
-            .then(response => response.json())
-            .then(function (wagons) {
-                    dispatch(wagonsReceived('ololo', wagons));
-                }
-            );
-    }
-}
+export const closeFileNameInput = (filename) => ({
+    type: "CLOSE_FILENAME_INPUT",
+    filename
+});
+
+export const fileNameChanged = (filename) => ({
+    type: "CHANGE_FILENAME",
+    filename
+});
+
+export const selectWagons = (wagonNumbers) => ({
+    type: "SELECT_WAGONS",
+    wagonNumbers
+});
+
+export const selectedWagonsSent = (filename, wagons) => ({
+    type: "SENT_SELECTED_WAGONS",
+    filename,
+    wagons
+});
+

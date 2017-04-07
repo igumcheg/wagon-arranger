@@ -1,14 +1,14 @@
 import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 
-const ButtonPresentation = ({onClick, label, float, disabled, wagons}) => (
-    <div style={{width:'49.75%', float, border: '1px solid white'}}>
+const ButtonPresentation = ({onClick, label, wagons, filename, fullWidth, primary, disabled}) => (
+    <div>
         <RaisedButton
             label={label}
-            fullWidth={true}
-            primary={true}
-            onTouchTap={()=>onClick(wagons)}
-            disabled={disabled}/>
+            fullWidth={fullWidth}
+            primary={primary}
+            disabled={disabled}
+            onTouchTap={()=>onClick(wagons, filename)}/>
     </div>
 );
 

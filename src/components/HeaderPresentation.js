@@ -2,7 +2,7 @@ import React from 'react';
 import {Component} from 'react'
 import AppBar from 'material-ui/AppBar';
 import IconButton from 'material-ui/IconButton';
-import FileFileUpload from 'material-ui/svg-icons/file/file-upload';
+import FileFileDownload from 'material-ui/svg-icons/file/file-download';
 import {loadDislocationFromFile} from "../util/util";
 import {newWagonsAdded} from "../actions/actions";
 import {connect} from 'react-redux';
@@ -15,12 +15,12 @@ class HeaderPresentation extends Component {
                <div> <input id="myInput" type="file" ref={(ref) => this.myInput = ref} style={{ display: 'none' }}
                onChange= {this.props.onChange}/>
                  <IconButton>
-                    <FileFileUpload color={'white'}
+                    <FileFileDownload color={'white'}
                      onClick={(e) => this.myInput.click()} />
 
                  </IconButton>
                  </div>}
-                    iconElementRight={ this.props.addLoaded ?
+                    iconElementRight={ this.props.loaded ?
                 <div><h1 style={{whiteSpace: 'nowrap',
                                      overflow: 'hidden',
                                      textOverflow: 'ellipsis',
@@ -52,7 +52,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const mapStateToProps = (state) => ({
-    addLoaded: state.status.addLoaded,
+    loaded: state.status.loaded,
     addFilename: state.status.addFilename
 });
 

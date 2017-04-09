@@ -4,7 +4,7 @@ import {width} from "./WagonRow";
 import OpenInputButton from "../containers/OpenInputButton"
 import TableCell from "./TableCell"
 
-const WagonTablePresentation = ({wagons,showFileNameInput, onRowSelect, loaded, onCellChange}) => {
+const WagonTablePresentation = ({wagons,showFileNameInput, onRowSelect, selected}) => {
 
     const overallStyle = {
         border: 'none',
@@ -115,7 +115,7 @@ const WagonTablePresentation = ({wagons,showFileNameInput, onRowSelect, loaded, 
 
 
             <div>
-                <OpenInputButton disabled={!loaded}/>
+                <OpenInputButton disabled={!selected}/>
             </div>
 
         </div>)

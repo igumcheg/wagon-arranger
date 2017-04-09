@@ -5,9 +5,10 @@ import {selectWagons} from "../actions/actions";
 const mapStateToProps = (state) => {
     return {
         wagons: state.wagons,
-        loaded: state.status.loaded,
         mainLoaded: state.status.mainLoaded,
-        showFileNameInput: state.status.showFileNameInput
+        showFileNameInput: state.status.showFileNameInput,
+        selected: state.wagons.length != 0
+        && state.wagons.reduce((sum, wagon)=> (sum || wagon.selected), false)
     }
 };
 

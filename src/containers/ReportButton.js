@@ -8,7 +8,7 @@ const mapStateToProps = (state) => {
     return {
         label: 'Создать',
         filename: state.status.filename,
-        wagons: state.wagons.filter((wagon)=> wagon.selected),
+        wagons: state.wagons.filter((wagon)=> wagon.selected).map((wagon,index)=>({...wagon, number: index+1})),
         fullWidth: false,
         primary: true
     }

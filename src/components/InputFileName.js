@@ -5,7 +5,7 @@ import CancelButtonContainer from '../containers/CancelButtonContainer'
 
 import TextField from 'material-ui/TextField';
 
-const InputFileName = ({handleChange, handleClick}) => (
+const InputFileName = ({handleChange, filename}) => (
 
         <div>
             <TextField hintText="Введите название отчета"  onChange={ handleChange }/>
@@ -13,7 +13,7 @@ const InputFileName = ({handleChange, handleClick}) => (
                 <CancelButtonContainer/>
             </div>
             <div style={{width: '45%', marginLeft: '10px', float:'left'}}>
-                <ReportButton />
+                <ReportButton disabled={!filename || filename == ""} />
             </div>
         </div>
 

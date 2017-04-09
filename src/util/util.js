@@ -13,14 +13,16 @@ export const loadDislocationFromFile = (file, dispatch, createAction) => {
 };
 
 export const saveFile = (wagons, filename, dispatch) => {
-  let formData = new FormData();
-  formData.append("filename", filename);
-  formData.append("wagons", JSON.stringify(wagons));
-  fetch('http://localhost:4567', {
-    method: 'POST',
-    body: formData
-  }).then(function (wagons) {
-      dispatch(selectedWagonsSent({filename, wagons}));
+    if (filename && filename != "" ) {
+        let formData = new FormData();
+        formData.append("filename", filename);
+        formData.append("wagons", JSON.stringify(wagons));
+        fetch('http://localhost:4567', {
+            method: 'POST',
+            body: formData
+        }).then(function (wagons) {
+                dispatch(selectedWagonsSent({filename, wagons}));
+            }
+        );
     }
-  );
 };

@@ -4,7 +4,8 @@ import InputFileName from "../components/InputFileName";
 import {fileNameChanged} from "../actions/actions";
 
 const mapStateToProps = (state) => ({
-         input: ''
+         input: '',
+        filename: state.status.filename
 });
 
 

@@ -6,6 +6,7 @@ const mapStateToProps = (state) => {
     return {
         wagons: state.wagons,
         mainLoaded: state.status.mainLoaded,
+        loaded: state.status.loaded,
         showFileNameInput: state.status.showFileNameInput,
         selected: state.wagons.length != 0
         && state.wagons.reduce((sum, wagon)=> (sum || wagon.selected), false)

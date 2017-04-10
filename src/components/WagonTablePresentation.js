@@ -3,8 +3,9 @@ import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow} from 'materi
 import {width} from "./WagonRow";
 import OpenInputButton from "../containers/OpenInputButton"
 import TableCell from "./TableCell"
+import LoadingDislocationScreen from "./LoadingDislocationScreen"
 
-const WagonTablePresentation = ({wagons,showFileNameInput, onRowSelect, selected}) => {
+const WagonTablePresentation = ({wagons,showFileNameInput, onRowSelect, selected, loaded}) => {
 
     const overallStyle = {
         border: 'none',
@@ -23,6 +24,8 @@ const WagonTablePresentation = ({wagons,showFileNameInput, onRowSelect, selected
     let style = {...overallStyle};
     return (
         <div style={{width: "auto"}}>
+            { !loaded ?
+            <LoadingDislocationScreen/> : null}
             <Table showCheckboxes={true} multiSelectable={true} onRowSelection={(keys) => {
               let selectedPositions = keys.map(key => wagons[key].wagon);
               onRowSelect(selectedPositions);

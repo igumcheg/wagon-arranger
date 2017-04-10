@@ -2,7 +2,6 @@ import React from 'react';
 import {Component} from 'react'
 import ReportButton from '../containers/ReportButton'
 import CancelButtonContainer from '../containers/CancelButtonContainer'
-
 import TextField from 'material-ui/TextField';
 
 const InputFileName = ({handleChange, filename}) => (

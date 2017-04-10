@@ -11,15 +11,8 @@ class HeaderPresentation extends Component {
     render() {
         return (
             <AppBar title="Раума Карго"
-                    iconElementLeft={
-               <div> <input id="myInput" type="file" ref={(ref) => this.myInput = ref} style={{ display: 'none' }}
-               onChange= {this.props.onChange}/>
-                 <IconButton>
-                    <FileFileDownload color={'white'}
-                     onClick={(e) => this.myInput.click()} />
-
-                 </IconButton>
-                 </div>}
+                    iconElementLeft={<div>
+                    </div>}
                     iconElementRight={ this.props.loaded ?
                 <div><h1 style={{whiteSpace: 'nowrap',
                                      overflow: 'hidden',

@@ -1,5 +1,4 @@
 const wagons = (state = [], action)=> {
-    console.log(action.type);
     switch (action.type) {
         case "ADD_NEW_WAGONS":
             return action.wagons;
@@ -10,7 +9,6 @@ const wagons = (state = [], action)=> {
                     newState[index][action.fieldName] = action.newValue;
                 }
             });
-            console.log(JSON.stringify(newState));
             return newState;
         case "SELECT_WAGONS":
             return state.map((wagon) => (

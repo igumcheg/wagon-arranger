@@ -16,7 +16,6 @@ class CellInput extends React.Component {
       event.target.value);
 
     let dispatch = this.props.dispatch;
-    console.log("ololo");
     dispatch(action);
   }
 

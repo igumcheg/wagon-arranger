@@ -1,8 +1,8 @@
 import {selectedWagonsSent} from "../actions/actions";
 export const loadDislocationFromFile = (file, dispatch, createAction) => {
   let formData = new FormData();
-  formData.append("file", figitle);
-  fetch('http://localhost:4567/parse', {
+  formData.append("file", file);
+  fetch('http://192.168.99.100:4567/parse', {
     method: 'POST',
     body: formData
   }).then(response => response.json())
@@ -15,9 +15,9 @@ export const loadDislocationFromFile = (file, dispatch, createAction) => {
 export const saveFile = (wagons, filename, dispatch) => {
     if (filename && filename != "" ) {
         let formData = new FormData();
-        formData.append("filename", filename);
+        formData.append("filename", encodeURI(filename));
         formData.append("wagons", JSON.stringify(wagons));
-        fetch('http://localhost:4567', {
+        fetch('http://192.168.99.100:4567', {
             method: 'POST',
             body: formData
         }).then(function (wagons) {

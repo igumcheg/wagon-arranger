@@ -44,3 +44,8 @@ export const selectedWagonsSent = (filename, wagons) => ({
     wagons
 });
 
+export const sortColumns = (parameter) => ({
+    type: "SORT_COLUMNS",
+    parameter
+});
+

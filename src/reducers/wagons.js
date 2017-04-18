@@ -1,4 +1,5 @@
 const wagons = (state = [], action)=> {
+    console.log(action.type);
     switch (action.type) {
         case "ADD_NEW_WAGONS":
             return action.wagons;

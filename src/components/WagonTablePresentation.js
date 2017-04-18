@@ -5,7 +5,7 @@ import OpenInputButton from "../containers/OpenInputButton"
 import TableCell from "./TableCell"
 import LoadingDislocationScreen from "./LoadingDislocationScreen"
 
-const WagonTablePresentation = ({wagons,showFileNameInput, onRowSelect, selected, loaded}) => {
+const WagonTablePresentation = ({wagons,showFileNameInput, onRowSelect, selected, loaded, onHeaderClick}) => {
 
     const overallStyle = {
         border: 'none',
@@ -32,38 +32,37 @@ const WagonTablePresentation = ({wagons,showFileNameInput, onRowSelect, selected
             }}>
                 <TableHeader displaySelectAll={false} adjustForCheckbox={true}>
                     <TableRow>
-                        <TableHeaderColumn style={{...overallStyle, ...width('2%')}}>N</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('5%')}}>Вагон</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('6%')}}>Собственник</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('7%')}}>Распорядитель</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('5%')}}>Дата отправки</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('2%')}} onClick={()=>onHeaderClick("number")}>N</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('5%')}} onTouchTap={()=>onHeaderClick("wagon")}>Вагон</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('6%')}} onTouchTap={()=>onHeaderClick("owner")}>Собственник</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('7%')}} onTouchTap={()=>onHeaderClick("manager")}>Распорядитель</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('5%')}} onTouchTap={()=>onHeaderClick("releaseDate")}>Дата отправки</TableHeaderColumn>
                         <TableHeaderColumn
-                            style={{...overallStyle, ...width('7%')}}>Станция отправления</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('6%')}}>ЖД Отправления</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('3%')}}>Тип груза</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('2%')}}>Вес</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('5%')}}>Дата операции</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('7%')}}>Текущая станция</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('4%')}}>ЖД текущая</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('5%')}}>Код операции</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('5%')}}>Дата прибытия</TableHeaderColumn>
+                            style={{...overallStyle, ...width('7%')}} onTouchTap={()=>onHeaderClick("releaseStation")}>Станция отправления</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('6%')}} onTouchTap={()=>onHeaderClick("releaseRailroad")}>ЖД Отправления</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('3%')}} onTouchTap={()=>onHeaderClick("cargoType")}>Тип груза</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('2%')}} onTouchTap={()=>onHeaderClick("weight")}>Вес</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('5%')}} onTouchTap={()=>onHeaderClick("operationDate")}>Дата операции</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('7%')}} onTouchTap={()=>onHeaderClick("currentStation")}>Текущая станция</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('4%')}} onTouchTap={()=>onHeaderClick("currentRailroad")}>ЖД текущая</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('5%')}} onTouchTap={()=>onHeaderClick("operationCode")}>Код операции</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('5%')}} onTouchTap={()=>onHeaderClick("arrivalDate")}>Дата прибытия</TableHeaderColumn>
                         <TableHeaderColumn
-                            style={{...overallStyle, ...width('7%')}}>Станция назначения</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('4%')}}>ЖД назначения</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('4%')}}>Код груза</TableHeaderColumn>
+                            style={{...overallStyle, ...width('7%')}} onTouchTap={()=>onHeaderClick("arrivalStation")}>Станция назначения</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('4%')}} onTouchTap={()=>onHeaderClick("arrivalRailroad")}>ЖД назначения</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('4%')}} onTouchTap={()=>onHeaderClick("cargoCode")}>Код груза</TableHeaderColumn>
                         <TableHeaderColumn
-                            style={{...overallStyle, ...width('5%')}}>Дата планового ремонта</TableHeaderColumn>
+                            style={{...overallStyle, ...width('5%')}} onTouchTap={()=>onHeaderClick("repairDate")}>Дата планового ремонта</TableHeaderColumn>
                         <TableHeaderColumn
-                            style={{...overallStyle, ...width('6%')}}>Количество дней простоя</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('4%')}}>Тип вагона</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('4%')}}>Модель</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('3%')}}>Км</TableHeaderColumn>
-                        <TableHeaderColumn style={{...overallStyle, ...width('5%')}}>Комментарий</TableHeaderColumn>
+                            style={{...overallStyle, ...width('6%')}} onTouchTap={()=>onHeaderClick("idleDays")}>Количество дней простоя</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('4%')}} onTouchTap={()=>onHeaderClick("wagonType")}>Тип вагона</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('4%')}} onTouchTap={()=>onHeaderClick("wagonModel")}>Модель</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('3%')}} onTouchTap={()=>onHeaderClick("km")}>Км</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('5%')}} onTouchTap={()=>onHeaderClick("comment")}>Комментарий</TableHeaderColumn>
                     </TableRow>
                 </TableHeader>
                 <TableBody deselectOnClickaway={false} displayRowCheckbox={!showFileNameInput}>
-                    {wagons.sort((a, b) => (a.number - b.number))
-                        .map((wagon) =>
+                    {wagons.map((wagon) =>
                             <TableRow selected={wagon.selected} key={wagon.wagon}>
                                 <TableCell style={{...style, ...width('2%')}} wagonNumber={wagon.wagon}
                                            value={wagon.number} fieldName={'number'}/>

@@ -1,10 +1,14 @@
 import WagonTablePresentation from "../components/WagonTablePresentation";
 import {connect} from "react-redux";
 import {selectWagons} from "../actions/actions";
+import {sortColumns} from "../actions/actions";
+import wagons from "../reducers/wagons";
 
 const mapStateToProps = (state) => {
+    let parameter = state.sorting.parameter;
+    console.log(JSON.stringify(state.wagons.sort((a,b)=> a[parameter] > b[parameter])));
     return {
-        wagons: state.wagons,
+        wagons: state.wagons.sort((a,b)=> a[parameter] > b[parameter]),
         mainLoaded: state.status.mainLoaded,
         loaded: state.status.loaded,
         showFileNameInput: state.status.showFileNameInput,
@@ -14,7 +18,8 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    onRowSelect: (keys) => dispatch(selectWagons(keys))
+    onRowSelect: (keys) => dispatch(selectWagons(keys)),
+    onHeaderClick:(parameter) => dispatch(sortColumns(wagons))
 });
 
 

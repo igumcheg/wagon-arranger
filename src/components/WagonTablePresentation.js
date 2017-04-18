@@ -1,5 +1,5 @@
 import React from 'react';
-import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow} from 'material-ui/Table';
+import {Table, TableFooter, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 import {width} from "./WagonRow";
 import OpenInputButton from "../containers/OpenInputButton"
 import TableCell from "./TableCell"
@@ -26,13 +26,13 @@ const WagonTablePresentation = ({wagons,showFileNameInput, onRowSelect, selected
         <div style={{width: "auto"}}>
             { !loaded ?
             <LoadingDislocationScreen/> : null}
-            <Table showCheckboxes={true} multiSelectable={true} onRowSelection={(keys) => {
+            <Table height={'400px'} fixedFooter={true} showCheckboxes={true} multiSelectable={true} onRowSelection={(keys) => {
               let selectedPositions = keys.map(key => wagons[key].wagon);
               onRowSelect(selectedPositions);
             }}>
                 <TableHeader displaySelectAll={false} adjustForCheckbox={true}>
                     <TableRow>
-                        <TableHeaderColumn style={{...overallStyle, ...width('2%')}} onClick={()=>onHeaderClick("number")}>N</TableHeaderColumn>
+                        <TableHeaderColumn style={{...overallStyle, ...width('2%')}} onTouchTap={()=>onHeaderClick("number")}>N</TableHeaderColumn>
                         <TableHeaderColumn style={{...overallStyle, ...width('5%')}} onTouchTap={()=>onHeaderClick("wagon")}>Вагон</TableHeaderColumn>
                         <TableHeaderColumn style={{...overallStyle, ...width('6%')}} onTouchTap={()=>onHeaderClick("owner")}>Собственник</TableHeaderColumn>
                         <TableHeaderColumn style={{...overallStyle, ...width('7%')}} onTouchTap={()=>onHeaderClick("manager")}>Распорядитель</TableHeaderColumn>
@@ -113,12 +113,15 @@ const WagonTablePresentation = ({wagons,showFileNameInput, onRowSelect, selected
                             </TableRow>
                         )}
                 </TableBody>
+                    <TableFooter adjustForCheckbox = {false}>
+                        <TableRow>
+                        <TableRowColumn colSpan="3" style={{textAlign: 'center'}}>
+                            <OpenInputButton disabled={!selected}/>
+                        </TableRowColumn>
+                        </TableRow>
+                </TableFooter>
             </Table>
 
-
-            <div>
-                <OpenInputButton disabled={!selected}/>
-            </div>
 
         </div>)
 };

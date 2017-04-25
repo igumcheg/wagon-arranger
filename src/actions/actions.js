@@ -49,3 +49,9 @@ export const sortColumns = (parameter) => ({
     parameter
 });
 
+export const filterWagons = (value, parameter) => ({
+    type: "FILTER_WAGONS",
+    value,
+    parameter
+});
+

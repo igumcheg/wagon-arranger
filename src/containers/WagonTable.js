@@ -2,30 +2,42 @@ import WagonTablePresentation from "../components/WagonTablePresentation";
 import {connect} from "react-redux";
 import {selectWagons} from "../actions/actions";
 import {sortColumns} from "../actions/actions";
-import wagons from "../reducers/wagons";
+import {filterWagons} from "../actions/actions";
 
 const mapStateToProps = (state) => {
-    let parameter = state.sorting.parameter;
+    let sortParameter = state.sorting.parameter;
+    let sortedWagons = state.wagons.slice().sort((a, b) => {
+        let aParameter = a[sortParameter];
+        let bParameter = b[sortParameter];
+        if (!isNaN(aParameter) && !isNaN(bParameter)) {
+            return Number(aParameter) - Number(bParameter);
+        }
+        return aParameter.localeCompare(bParameter);
+    });
+
+    let filteredParameterName = state.filtering.parameter;
+    let filteredParameterValue = state.filtering.value;
+    let filteredWagons = sortedWagons.filter((wagon)=> {
+        return wagon[filteredParameterName] === filteredParameterValue;
+    });
+
+
     return {
-        wagons: state.wagons.slice().sort((a, b) => {
-          let aParameter = a[parameter];
-          let bParameter = b[parameter];
-            if (!isNaN(aParameter) && !isNaN(bParameter)) {
-              return Number(aParameter) - Number(bParameter);
-            }
-          return aParameter.localeCompare(bParameter);
-          }),
+        wagons: filteredWagons,
         mainLoaded: state.status.mainLoaded,
         loaded: state.status.loaded,
         showFileNameInput: state.status.showFileNameInput,
         selected: state.wagons.length != 0
-        && state.wagons.reduce((sum, wagon)=> (sum || wagon.selected), false)
+        && state.wagons.reduce((sum, wagon)=> (sum || wagon.selected), false),
+        getPossibleValues: (wagons, parameter) =>
+            Array.from(new Set(wagons.map((wagon)=>wagon[parameter])))
     }
 };
 
 const mapDispatchToProps = (dispatch) => ({
     onRowSelect: (keys) => dispatch(selectWagons(keys)),
-    onHeaderClick:(parameter) => dispatch(sortColumns(parameter))
+    onHeaderClick:(parameter) => dispatch(sortColumns(parameter)),
+    onFilterSelect:(value, parameter) =>dispatch(filterWagons(value,parameter))
 });
 
 const WagonTable = connect(mapStateToProps, mapDispatchToProps)(WagonTablePresentation);

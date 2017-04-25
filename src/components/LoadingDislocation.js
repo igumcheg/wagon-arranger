@@ -5,7 +5,6 @@ import IconButton from 'material-ui/IconButton';
 import {loadDislocationFromFile} from "../util/util";
 import {newWagonsAdded} from "../actions/actions";
 import {connect} from "react-redux";
-import {blue500} from 'material-ui/styles/colors';
 
 
 class LoadingDislocation extends Component {

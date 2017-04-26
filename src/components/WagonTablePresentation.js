@@ -46,7 +46,14 @@ const WagonTablePresentation = ({
             { !loaded ?
                 <LoadingDislocationScreen/> : null}
             <Table height={'400px'} fixedFooter={true} showCheckboxes={true} multiSelectable={true} onRowSelection={(keys) => {
-              let selectedPositions = keys.map(key => wagons[key].wagon);
+             let selectedPositions;
+                if (keys === "all") {
+                    selectedPositions = wagons.map((wagon) => wagon.wagon);
+                } else if (keys === "none") {
+                    selectedPositions = [];
+                } else {
+                    selectedPositions = keys.map(key => wagons[key].wagon);
+                }
               onRowSelect(selectedPositions);
             }}>
                 <TableHeader displaySelectAll={true} adjustForCheckbox={true}>

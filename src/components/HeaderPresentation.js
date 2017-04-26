@@ -1,32 +1,44 @@
 import React from 'react';
 import {Component} from 'react'
 import AppBar from 'material-ui/AppBar';
-import {loadDislocationFromFile} from "../util/util";
 import {newWagonsAdded} from "../actions/actions";
 import {connect} from 'react-redux';
+import DeleteFilterButtonContainer from '../containers/DeleteFilterButtonContainer'
+
+
+const loadingFileStyle = {
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    margin: '0px',
+    paddingTop: '0px',
+    letterSpacing: '0px',
+    fontSize: '18px',
+    fontWeight: '400',
+    color: 'rgb(255, 255, 255)',
+    lineHeight: '20px',
+    flex: '1 1 0%'
+};
+
 
 class HeaderPresentation extends Component {
+
     render() {
         return (
             <AppBar title="Раума Карго"
                     iconElementLeft={<div>
                     </div>}
                     iconElementRight={ this.props.loaded ?
-                <div><h1 style={{whiteSpace: 'nowrap',
-                                     overflow: 'hidden',
-                                     textOverflow: 'ellipsis',
-                                     margin: '0px',
-                                     paddingTop: '0px',
-                                     letterSpacing: '0px',
-                                     fontSize: '18px',
-                                     fontWeight: '400',
-                                     color: 'rgb(255, 255, 255)',
-                                     height: '64px',
-                                     lineHeight: '64px',
-                                     flex: '1 1 0%'
-                                    }}>
+                <div><h1 style={loadingFileStyle}>
                     Загружен файл: {this.props.addFilename}
                 </h1>
+                { this.props.parameter ?
+                <div><h2 style={{...loadingFileStyle, fontSize: '14px',float:'left'}}>
+                    Применены фильтры: {this.props.value}
+                    </h2>
+                    <DeleteFilterButtonContainer/>
+                </div>
+                : null}
                 </div>
              : null}
             />

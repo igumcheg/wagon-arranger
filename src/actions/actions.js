@@ -55,3 +55,7 @@ export const filterWagons = (value, parameter) => ({
     parameter
 });
 
+export const deleteFilter = () => ({
+    type: "DELETE_FILTER"
+});
+

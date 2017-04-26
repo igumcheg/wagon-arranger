@@ -18,6 +18,7 @@ const loadingFileStyle = {
     color: 'rgb(255, 255, 255)',
     lineHeight: '20px',
     flex: '1 1 0%'
+
 };
 
 
@@ -32,13 +33,7 @@ class HeaderPresentation extends Component {
                 <div><h1 style={loadingFileStyle}>
                     Загружен файл: {this.props.addFilename}
                 </h1>
-                { this.props.parameter ?
-                <div><h2 style={{...loadingFileStyle, fontSize: '14px',float:'left'}}>
-                    Применены фильтры: {this.props.value}
-                    </h2>
                     <DeleteFilterButtonContainer/>
-                </div>
-                : null}
                 </div>
              : null}
             />

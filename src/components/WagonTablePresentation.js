@@ -136,7 +136,7 @@ const WagonTablePresentation = ({
 
                         <TableHeaderColumn
                             style={{...overallStyle, ...width('6%')}}>
-                            <HeaderCellContent parameterName={"idleDays"} onHeaderClick={onHeaderClick} onFilterSelect={onFilterSelect} values={getPossibleValues(wagons, 'repairDate')} headerName={"Количество дней простоя"}/>
+                            <HeaderCellContent parameterName={"idleDays"} onHeaderClick={onHeaderClick} onFilterSelect={onFilterSelect} values={getPossibleValues(wagons, 'idleDays')} headerName={"Количество дней простоя"}/>
                         </TableHeaderColumn>
 
                         <TableHeaderColumn style={{...overallStyle, ...width('4%')}}>

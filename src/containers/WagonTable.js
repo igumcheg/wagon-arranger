@@ -15,10 +15,16 @@ const mapStateToProps = (state) => {
         return aParameter.localeCompare(bParameter);
     });
 
-    let filteredParameterName = state.filtering.parameter;
-    let filteredParameterValue = state.filtering.value;
-    let filteredWagons = sortedWagons.filter((wagon)=> {
+    let filters = state.filtering;
+    let filteredWagons = sortedWagons;
+    filters.forEach((filter)=>{
+        console.log(JSON.stringify(filter));
+        let filteredParameterName = filter.parameter;
+        let filteredParameterValue = filter.value;
+        filteredWagons = filteredWagons.filter((wagon)=> {
         return wagon[filteredParameterName] === filteredParameterValue;
+        });
+        console.log(JSON.stringify(filteredWagons));
     });
 
 

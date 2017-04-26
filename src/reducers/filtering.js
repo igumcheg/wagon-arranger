@@ -1,10 +1,10 @@
-const filtering = (state = {}, action)=> {
+const filtering = (state = [], action)=> {
     switch (action.type) {
         case "FILTER_WAGONS":
-            return {value: action.value, parameter: action.parameter};
+            return [...state, {value: action.value, parameter: action.parameter}];
 
         case "DELETE_FILTER":
-            return {};
+            return [];
         default:
             return state;
     }

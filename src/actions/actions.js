@@ -59,3 +59,11 @@ export const deleteFilter = () => ({
     type: "DELETE_FILTER"
 });
 
+export const selectAll = () => ({
+    type: "SELECT_ALL"
+});
+
+export const deselectAll = () => ({
+    type: "DESELECT_ALL"
+});
+

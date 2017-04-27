@@ -1,5 +1,5 @@
 import React from 'react';
-import {Component} from 'react'
+import {Component} from 'react';
 import AppBar from 'material-ui/AppBar';
 import {newWagonsAdded} from "../actions/actions";
 import {connect} from 'react-redux';

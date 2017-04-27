@@ -43,7 +43,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
     onRowSelect: (keys) => dispatch(selectWagons(keys)),
     onHeaderClick:(parameter) => dispatch(sortColumns(parameter)),
-    onFilterSelect:(value, parameter) =>dispatch(filterWagons(value,parameter))
+    onFilterSelect:(value, parameter) => {
+        dispatch(filterWagons(value, parameter));
+    }
 });
 
 const WagonTable = connect(mapStateToProps, mapDispatchToProps)(WagonTablePresentation);

@@ -28,7 +28,7 @@ const DeleteFilterButton = ({
             )}
         </h2>
 
-        <IconButton tooltip="Удалить фильтр"
+        <IconButton tooltip="Удалить фильтры"
 
                     iconStyle={{width: '18px',
                                          height: '18px',

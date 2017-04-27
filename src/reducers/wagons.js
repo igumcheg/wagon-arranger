@@ -19,10 +19,18 @@ const wagons = (state = [], action)=> {
             }
             ));
         case "SENT_SELECTED_WAGONS":
+        case "DESELECT_ALL":
             return state.map((wagon) => (
             {
                 ...wagon,
                 selected: false
+            }
+            ));
+        case "SELECT_ALL":
+            return state.map((wagon) => (
+            {
+                ...wagon,
+                selected: true
             }
             ));
         default:

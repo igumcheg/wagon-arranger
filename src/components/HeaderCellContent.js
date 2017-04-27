@@ -1,16 +1,16 @@
 import React from 'react';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
+import headers from "../util/headers";
 
 
 const HeaderCellContent = ({
     values,
     parameterName,
-    headerName,
     onHeaderClick,
     onFilterSelect
 }) => (<div>
-<div style={{height: '30px',padding:'7px 0px'}} onClick={()=>onHeaderClick(parameterName)}>{headerName}</div>
+<div style={{height: '30px',padding:'7px 0px'}} onClick={()=>onHeaderClick(parameterName)}>{headers[parameterName]}</div>
     {values.length > 1 ?
 <DropDownMenu style={{width:'100%'}}
 labelStyle={{padding: "0px 0px 5px 0px",

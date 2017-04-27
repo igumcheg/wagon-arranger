@@ -15,7 +15,7 @@ class LoadingDislocation extends Component {
             </div>
             <div><input id="myInput" type="file" ref={(ref) => this.myInput = ref} style={{ display: 'none' }}
                         onChange={this.props.onChange}/>
-                <IconButton iconStyle={{width: '60px', height: '60px'}} style={{width: '60px', height: '60px', padding: '0px'}}>
+                <IconButton tooltip="Загрузить дислокацию" iconStyle={{width: '60px', height: '60px'}} style={{width: '60px', height: '60px', padding: '0px'}}>
                     <FileFileDownload onClick={(e) => this.myInput.click()}/>
                 </IconButton>
             </div>
